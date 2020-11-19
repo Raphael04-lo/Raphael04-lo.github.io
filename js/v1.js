@@ -1,11 +1,14 @@
+const numberCards = 16
 
-
-let c = document.querySelectorAll('.card')
-
-for (const i of c){
-    i.addEventListener('click', xy)
+let p = document.querySelector('.deck')
+for (let index = 0; index < numberCards; index++) {
+        let c = document.createElement('div')
+        c.innerHTML = index % 16 + 1
+        c.className="card"
+        c.addEventListener('click',flipp)
+        p.appendChild(c)
 }
 
-function xy(event){
-    this.classList.toggle('flip');
+function flipp(event){
+    this.classList.toggle('flip')
 }
