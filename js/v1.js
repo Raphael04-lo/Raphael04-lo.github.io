@@ -1,16 +1,3 @@
-/*
-1) Leeres Array zum Speichern der aufgedeckten Karten (openedCards)
-2) Karten richtig erzeugen (type) [1,1,2,2,3,3,4,4.........8,8]
-3)KArten mischen (shuffle)
-4) Karten zum Deck hinzufügen
-5) Klick Eventhandler
-6)Kartenlogik:
-    6.1) prüfen wie viele Karten bereits aufgedeckt sind
-    6.2) wenn weniger als 2 -> aufdecken
-    6.3)Erkennen ob zwei gleiche Karten
-    aufgedeckt wurden -> wenn gleich -> found; wenn nicht gleich -> verdecken
-*/
-
 const numberCards = 16
 let openCards = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
 let openedCards = []
@@ -28,12 +15,29 @@ for (let index = 0; index < numberCards; index++) {
 
 
 function flipp(event){
-    if(!this.classList.contains('found'))
-        openCard(this)
-    this.classList.toggle('flipped')
+    //openCard(this)
 }
 function openCard(c){
-    alert(c.innerHTML)
+    if(openedCards.length < 2){
+        openedCards.push(c)
+        c.classList.toggle('flipped')
+        if(openedCards.length == 2){
+            if(openedCards[0].type == openedCards[1].type){
+                openedCards.pop().classList.toggle('found')
+                openedCards.pop().classList.toggle('found')
+            }
+            else{
+                window.setTimeout(
+                    ()=>{
+                        openedCards.pop().classList.toggle('flipped')
+                        openedCards.pop().classList.toggle('flipped')
+                    },
+                    1000
+                )
+            }        
+        }
+    }
+    
 }
 
 function shuffle(array) {
