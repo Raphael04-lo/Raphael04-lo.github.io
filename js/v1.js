@@ -86,7 +86,6 @@ function Finish(){
 }
 
 function fadeOutEffect(c) {
-    var fadeTarget = c
     var fadeEffect = setInterval(function () {
         if (!c.style.opacity) {
             c.style.opacity = 1;
