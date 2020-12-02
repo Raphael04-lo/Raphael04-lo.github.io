@@ -3,6 +3,8 @@ let openCards = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
 let openedCards = []
 shuffle(openCards)
 
+var Score = 0;
+
 let p = document.querySelector('.deck')
 for (let index = 0; index < numberCards; index++) {
         let c = document.createElement('div')
@@ -15,7 +17,7 @@ for (let index = 0; index < numberCards; index++) {
 
 
 function flipp(event){
-    //openCard(this)
+    openCard(this)
 }
 function openCard(c){
     if(openedCards.length < 2){
@@ -25,6 +27,8 @@ function openCard(c){
             if(openedCards[0].type == openedCards[1].type){
                 openedCards.pop().classList.toggle('found')
                 openedCards.pop().classList.toggle('found')
+                Score += 1
+                document.querySelector('#score').textContent = `Score: ${Score}`;
             }
             else{
                 window.setTimeout(
