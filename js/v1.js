@@ -81,7 +81,7 @@ function shuffle(array) {
 
 function Finish(){
     if(foundCards.length == 16){
-        alert(`Victoy Royal! Du hast ${Zeit} Sekunden gebraucht. Um neu zu starten F5 drücken.`)
+        alert(`Super! Du hast ${Zeit} Sekunden gebraucht. Um neu zu starten F5 drücken.`)
     }
 }
 
