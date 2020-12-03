@@ -14,8 +14,8 @@
 
 
 .card {
-    background:rgb(0, 255, 221);
-    color:rgb(0, 255, 221);
+    background:rgb(69, 94, 90);
+    color:rgb(69, 94, 90);
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
     margin: 5%;
@@ -31,7 +31,7 @@
 }
 
 .flipped {
-    background-color: rgb(67, 67, 80); 
+    background-color: white;
 }
 
 .found{
@@ -43,7 +43,7 @@ h1{
 }
 
 body{
-    background-color: royalblue;
+    background-color: rgb(67, 67, 80);
     font-weight: bold;
 }
 
